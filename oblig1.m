@@ -2,7 +2,7 @@ clc
 %clear all
 
 N    = 1000; 
-ens  = 1 %10^5;
+ens  = 10^5;
 p    = 0.5;
 x    = zeros(N,1);
 x(1) = 1.0;
