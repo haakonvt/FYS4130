@@ -3,9 +3,9 @@ clc
 
 N    = 1000; 
 ens  = 10^5;
-p    = 0.01;
+p    = 0.5;
 x    = ones(ens,1);
-%x(1) = 1.0;
+x(1) = 1.0;
 
 x2avg    = zeros(N,1);
 xavg2    = zeros(N,1);
@@ -15,6 +15,9 @@ xavg2(1) = 1;
 var(1)   = 0;
 
 xsum = ones(ens,1);
+
+% Time computation
+tic
 
 for t=2:N
     for n=1:ens
@@ -32,6 +35,6 @@ for t=2:N
     var(t) = x2avg(t) - xavg2(t);
 end
 
-plot(0:N-1,var)
-figure
+toc
+
 loglog(0:N-1,var)
